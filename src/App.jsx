@@ -9,10 +9,15 @@ function App() {
   
   let [todoList, setToDoList] = useState(['Do laundry', 'Go to gym', 'Walk dog'])
 
+
+  const addTask = (task) => {
+      setToDoList([...todoList, task]);
+  };
+
   return (
     <SafeAreaView>
       <ToDoList tasks={todoList} />
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
